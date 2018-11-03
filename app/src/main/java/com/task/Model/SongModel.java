@@ -6,14 +6,14 @@ package com.task.Model;
 
 public class SongModel {
 
-    private String img;
+    private String kind;
 
     public String getImg() {
-        return img;
+        return kind;
     }
 
-    public void setImg(String img) {
-        this.img = img;
+    public void setKind(String kind) {
+        this.kind = kind;
     }
 
     public String getName() {

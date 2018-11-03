@@ -39,13 +39,18 @@ public class Utility_class {
                     alert.show();
 
                 } else {
+
                     ActivityCompat.requestPermissions((Activity) context, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE);
                 }
                 return false;
+
             } else {
+
                 return true;
             }
+
         } else {
+
             return true;
         }
     }
