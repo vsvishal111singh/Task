@@ -8,18 +8,20 @@ import android.support.v7.widget.RecyclerView;
 import android.widget.LinearLayout;
 
 import com.task.Model.SongModel;
+import com.task.Model.SongModel1;
 import com.task.Presenter.SongPresenter;
 import com.task.Model.SongPresenterImpl;
 import com.task.View.SongView;
 import com.task.adapter.DataAdapter;
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements SongView {
 
     SongPresenter presenter;
     RecyclerView recyclerView;
     DataAdapter adapter;
-    ArrayList<SongModel> songlist;
+    ArrayList<SongModel1> songlist;
     Context context;
     RecyclerView mRecyclerView;
 
@@ -28,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements SongView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         context = MainActivity.this;
-        songlist = new ArrayList<SongModel>();
+        songlist = new ArrayList<SongModel1>();
        // songlist.add(new SongModel("hello"));
        // songlist.add(new SongModel("hello1"));
        // songlist.add(new SongModel("hello2"));
@@ -44,9 +46,8 @@ public class MainActivity extends AppCompatActivity implements SongView {
     }
 
     @Override
-    public void onSuccess(ArrayList<SongModel> list) {
+    public void onSuccess(ArrayList<SongModel1> list) {
 
-        songlist = list;
         adapter.notifyDataSetChanged();
     }
 

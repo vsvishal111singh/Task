@@ -3,6 +3,7 @@ package com.task.adapter;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.task.MainActivity;
 import com.task.Model.SongModel;
+import com.task.Model.SongModel1;
 import com.task.R;
 
 import java.util.ArrayList;
@@ -19,9 +21,9 @@ import java.util.ArrayList;
 public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
 
     Context context;
-    ArrayList<SongModel> songlist;
+    ArrayList<SongModel1> songlist;
 
-    public DataAdapter(Context context, ArrayList<SongModel> songlist) {
+    public DataAdapter(Context context, ArrayList<SongModel1> songlist) {
 
         this.context = context;
         this.songlist = songlist;
@@ -37,7 +39,8 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull DataAdapter.ViewHolder holder, int position) {
 
-        SongModel item = songlist.get(position);
+        SongModel1 item = songlist.get(position);
+        Log.e("Data",item.getArtistId());
         //Glide.with(context).load(item.getImg()).into(holder.imageView);
         holder.title.setText(item.getKind());
     }
@@ -54,7 +57,6 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
 
         public ViewHolder(View itemView) {
             super(itemView);
-
             imageView = (ImageView)itemView.findViewById(R.id.photo);
             title = (TextView)itemView.findViewById(R.id.title);
         }

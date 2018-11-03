@@ -67,7 +67,9 @@ public class SongPresenterImpl implements SongPresenter {
                             Log.e("list",""+jsonArray.length());
                             if(jsonArray.length()>0) {
 
-                                ArrayList<SongModel> items = new Gson().fromJson(jsonArray.toString(), new TypeToken<List<SongModel>>() {
+                                // ArrayList<SongModel> items = new ArrayList<>();
+                                // items.add(new SongModel());
+                                ArrayList<SongModel1> items = new Gson().fromJson(jsonArray.toString(), new TypeToken<ArrayList<SongModel1>>() {
                                 }.getType());
                                 Log.e("list",items.toString());
                                 view.onSuccess(items);
@@ -78,6 +80,7 @@ public class SongPresenterImpl implements SongPresenter {
                             }
 
                         } catch (JSONException e) {
+
                            e.printStackTrace();
                         }
                         break;
