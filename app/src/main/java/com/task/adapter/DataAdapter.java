@@ -39,7 +39,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
 
         SongModel item = songlist.get(position);
         //Glide.with(context).load(item.getImg()).into(holder.imageView);
-
+        holder.title.setText(item.getKind());
     }
 
     @Override

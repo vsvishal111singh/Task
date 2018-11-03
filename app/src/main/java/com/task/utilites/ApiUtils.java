@@ -4,15 +4,14 @@ import android.content.Context;
 import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.os.Build;
 import android.provider.Settings;
 import android.support.design.widget.Snackbar;
 import android.support.v4.widget.DrawerLayout;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.RelativeLayout;
 
-import com.sayexpert.MyApplication;
+import com.task.MyApplication;
+
 
 public class ApiUtils  {
 

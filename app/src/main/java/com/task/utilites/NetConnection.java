@@ -4,16 +4,10 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
-import com.sayexpert.MyApplication;
+import com.task.MyApplication;
 
 
 public class NetConnection {
-
-//    Context context;
-//
-//    NetConnection(Context context){
-//        this.context = context;
-//    }
 
     public static boolean isNetworkAvalilable(){
 
@@ -21,7 +15,5 @@ public class NetConnection {
         NetworkInfo activeNetworkinfo = cm.getActiveNetworkInfo();
         return activeNetworkinfo!=null&& activeNetworkinfo.isConnected();
     }
-
-
 
 }

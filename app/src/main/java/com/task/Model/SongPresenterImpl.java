@@ -52,7 +52,7 @@ public class SongPresenterImpl implements SongPresenter {
         WebServiceExecutor executor = new WebServiceExecutor(context);
         executor.setRequestParam(params);
         executor.setHeader(headers);
-        executor.isProgressDialogShow(true);
+        executor.isProgressDialogShow(false);
         executor.setUrl("https://itunes.apple.com/search?term=Michael+jackson");
         executor.setRequestMethod(Method.POST);
         executor.setRequestCode(ORDER_REQUEST);
@@ -62,23 +62,24 @@ public class SongPresenterImpl implements SongPresenter {
                 switch (requestCode) {
                     case ORDER_REQUEST:
                         try {
-                            Log.e("Orderlist",response.toString());
                             JSONObject mainObject = new JSONObject(response);
                             JSONArray jsonArray = mainObject.getJSONArray("results");
+                            Log.e("list",""+jsonArray.length());
                             if(jsonArray.length()>0) {
 
                                 ArrayList<SongModel> items = new Gson().fromJson(jsonArray.toString(), new TypeToken<List<SongModel>>() {
                                 }.getType());
+                                Log.e("list",items.toString());
                                 view.onSuccess(items);
 
                             }else{
 
                                 view.onFail();
                             }
+
                         } catch (JSONException e) {
-
+                           e.printStackTrace();
                         }
-
                         break;
                 }
             }

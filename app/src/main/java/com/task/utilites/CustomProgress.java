@@ -5,8 +5,7 @@ import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Window;
-
-import com.sayexpert.R;
+import com.task.R;
 
 
 public class CustomProgress extends Dialog {

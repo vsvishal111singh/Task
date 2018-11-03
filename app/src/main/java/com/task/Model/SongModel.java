@@ -8,7 +8,11 @@ public class SongModel {
 
     private String kind;
 
-    public String getImg() {
+    public SongModel(String kind){
+        this.kind = kind;
+    }
+
+    public String getKind() {
         return kind;
     }
 
