@@ -65,12 +65,19 @@ public class SongPresenterImpl implements SongPresenter {
                             JSONObject mainObject = new JSONObject(response);
                             JSONArray jsonArray = mainObject.getJSONArray("results");
                             Log.e("list",""+jsonArray.length());
+                            ArrayList<SongModel> items = new ArrayList<>();
                             if(jsonArray.length()>0) {
 
-                                // ArrayList<SongModel> items = new ArrayList<>();
-                                // items.add(new SongModel());
-                                ArrayList<SongModel1> items = new Gson().fromJson(jsonArray.toString(), new TypeToken<ArrayList<SongModel1>>() {
-                                }.getType());
+                                for(int i=0;i<jsonArray.length();i++){
+                                    JSONObject job = jsonArray.getJSONObject(i);
+                                    items.add(new SongModel(job.getString("wrapperType"),job.getString("kind"),
+                                                            job.getString("artistId"), job.getString("collectionId"),
+                                                            job.getString("trackId"), job.getString("artistName"),
+                                                            job.getString("artistViewUrl")));
+                                }
+
+//                              ArrayList<SongModel1> items = new Gson().fromJson(jsonArray.toString(), new TypeToken<ArrayList<SongModel1>>() {
+//                              }.getType());
                                 Log.e("list",items.toString());
                                 view.onSuccess(items);
 

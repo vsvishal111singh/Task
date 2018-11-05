@@ -7,6 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public interface SongView{
-    void onSuccess(ArrayList<SongModel1> arraylist);
+    void onSuccess(ArrayList<SongModel> arraylist);
     void onFail();
 }

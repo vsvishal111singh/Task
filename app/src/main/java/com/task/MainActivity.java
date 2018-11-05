@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.widget.LinearLayout;
 
 import com.task.Model.SongModel;
@@ -21,7 +22,7 @@ public class MainActivity extends AppCompatActivity implements SongView {
     SongPresenter presenter;
     RecyclerView recyclerView;
     DataAdapter adapter;
-    ArrayList<SongModel1> songlist;
+    ArrayList<SongModel> songlist;
     Context context;
     RecyclerView mRecyclerView;
 
@@ -30,10 +31,10 @@ public class MainActivity extends AppCompatActivity implements SongView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         context = MainActivity.this;
-        songlist = new ArrayList<SongModel1>();
-       // songlist.add(new SongModel("hello"));
-       // songlist.add(new SongModel("hello1"));
-       // songlist.add(new SongModel("hello2"));
+        songlist = new ArrayList<SongModel>();
+        // songlist.add(new SongModel("hello"));
+        // songlist.add(new SongModel("hello1"));
+        // songlist.add(new SongModel("hello2"));
         presenter = new SongPresenterImpl(this,context);
         mRecyclerView = (RecyclerView)findViewById(R.id.mRecyclerView);
         mRecyclerView.setHasFixedSize(true);
@@ -42,12 +43,12 @@ public class MainActivity extends AppCompatActivity implements SongView {
         adapter = new DataAdapter(context,songlist);
         mRecyclerView.setAdapter(adapter);
         presenter.getSongs();
-
     }
 
     @Override
-    public void onSuccess(ArrayList<SongModel1> list) {
-
+    public void onSuccess(ArrayList<SongModel> list) {
+        Log.e("Items",list.toString());
+        songlist = list;
         adapter.notifyDataSetChanged();
     }
 

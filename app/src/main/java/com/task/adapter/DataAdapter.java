@@ -21,10 +21,9 @@ import java.util.ArrayList;
 public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
 
     Context context;
-    ArrayList<SongModel1> songlist;
+    ArrayList<SongModel> songlist;
 
-    public DataAdapter(Context context, ArrayList<SongModel1> songlist) {
-
+    public DataAdapter(Context context, ArrayList<SongModel> songlist) {
         this.context = context;
         this.songlist = songlist;
     }
@@ -39,7 +38,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull DataAdapter.ViewHolder holder, int position) {
 
-        SongModel1 item = songlist.get(position);
+        SongModel item = songlist.get(position);
         Log.e("Data",item.getArtistId());
         //Glide.with(context).load(item.getImg()).into(holder.imageView);
         holder.title.setText(item.getKind());

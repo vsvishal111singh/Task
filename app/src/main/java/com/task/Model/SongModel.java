@@ -13,6 +13,18 @@ public class SongModel {
     private String trackId;
     private String artistName;
 
+    private String artistViewUrl;
+
+    SongModel(String wrapperType,String kind,String artistId,String collectionId,String trackId,String artistName,String artistViewUrl){
+        this.wrapperType =wrapperType;
+        this.kind =kind;
+        this.artistId =artistId;
+        this.collectionId =collectionId;
+        this.trackId =trackId;
+        this.artistName =artistName;
+        this.artistViewUrl =artistViewUrl;
+    }
+
     public String getWrapperType() {
         return wrapperType;
     }
@@ -55,6 +67,10 @@ public class SongModel {
 
     public String getArtistName() {
         return artistName;
+    }
+
+    public String getArtistViewUrl() {
+        return artistViewUrl;
     }
 
     public void setArtistName(String artistName) {
