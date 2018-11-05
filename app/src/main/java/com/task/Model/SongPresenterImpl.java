@@ -74,10 +74,13 @@ public class SongPresenterImpl implements SongPresenter {
                                                             job.getString("artistId"), job.getString("collectionId"),
                                                             job.getString("trackId"), job.getString("artistName"),
                                                             job.getString("artistViewUrl")));
+
+                                    //Log.e("list",job.getString("wrapperType"));
                                 }
 
 //                              ArrayList<SongModel1> items = new Gson().fromJson(jsonArray.toString(), new TypeToken<ArrayList<SongModel1>>() {
 //                              }.getType());
+
                                 Log.e("list",items.toString());
                                 view.onSuccess(items);
 
